@@ -1,38 +1,184 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root{
+
+  /* color for the page */
+  --dark-blue:hsl(209, 23%, 22%);
+  --dark-mode-bg:hsl(207, 26%, 17%);
+  --light-mode-txt: hsl(200, 15%, 8%);
+  --dark-grey:hsl(0, 0%, 52%);
+  --light-grey:hsl(0, 0%, 98%);
+
+  /* font size refered as fs */
+  --fs-sm:14px;
+  --fs-lg:16px;
+
+
+  /* font weights refered as fw */
+  --fw-300:300;
+  --fw-600:600;
+  --fw-800:800;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, *::after, *::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  text-decoration: none;
 }
-
-.App-header {
-  background-color: #282c34;
+p {
+  margin-block: 0.3em;
+  padding: 0;
+}
+body{
+  font-family: 'Nunito Sans', sans-serif;
+}
+.loader{
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%,-50%);
+}
+.App-light{
   min-height: 100vh;
+}
+.App-light, .App-header-light{
+  background-color: var(--light-grey);
+}
+.App-dark{
+  background-color: var(--dark-mode-bg);
+  min-height: 100vh;
+ 
+}
+.App-header-dark{
+  background-color: var(--dark-blue);
+}
+.App-header-dark .logo h3, .App-header-dark .theme--toogler{
+  color: #fff;
+} 
+.App-header{
+  height: 70px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  padding: 1.4em 4.4em;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, .4);
+}
+.logo h3{
+  font-weight: var(--fw-800);
+  color: var(--light-mode-txt);
+
+}
+button{
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
 }
 
-.App-link {
-  color: #61dafb;
+/* Countries Card*/
+.main--body{
+      margin-top: 4em;
+}
+.card--container{
+  width: 100%;
+  height: 100%;
+}
+.card--top img{
+ width: 25%;
+ height: 100%;
+}
+.card--body{
+  background-color: #fff;
+  height: 100%;
+}
+.card--title{
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-800);
+  color: var(--light-mode-txt);
+}
+.data--title{
+  
+  font-weight: var(--fw-600);
+}
+.data--description{
+  font-size: var(--fs-sm);
+  color: var(--light-mode-txt);
+}
+.section--top{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+.search--input{
+  padding: 0.8em;
+  width: 25%;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, .4);
+}
+.select--field{
+  width: 12%;
+  padding-inline: 0.8em;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, .4);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.back--btn{
+  padding: 0.4em 1.8em;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, .4);
+  margin-right: 0.4em;
+  border-radius: 8px;
+}
+.back--btn-light{
+  background-color: #fff;
+}
+.back--btn-dark{
+  background-color: var(--dark-blue);
+  color: #fff;
+}
+/* Individual COuntries */
+.individual-coutnry-holder{
+ 
+}
+.individual-country--container{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 4em;
+  margin-top: 2em;
+}
+
+.indi--left-img img{
+  width: 100%;
+  height: 100%;
+}
+.indi--right-content{
+  margin-top: 2em;
+  font-size: var(--fs-lg);
+  line-height: 1.8;
+  
+}
+.indi--right-title{
+  font-weight: var(--fw-800);
+ 
+}
+.data--wrapper{
+  margin-top: 1em;
+  display: flex;
+  gap: 8em;
+}
+
+.input--dark,
+ .card--dark,
+ .card--dark .card--title,
+ .card--dark .data--description,
+ .card--dark .data--title{
+  background-color: var(--dark-blue);
+  color: #fff;
+}
+.indi--dark .indi--right-title,
+.indi--dark .data--description,
+.indi--dark .data--title{
+  color: #fff;
 }
